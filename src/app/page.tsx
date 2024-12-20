@@ -1,9 +1,19 @@
+import FeaturedTopics from "@/components/FeaturedTopics";
+
 export default function Home() {
   return (
-    <div>
-      <h1 className='bg-primary text-6xl'>Hello World!</h1>
-      <h2 className='bg-secondary text-5xl'>Hello World!</h2>
-      <h3 className='bg-accent text-4xl'>Hello World!</h3>
+    <div className="space-y-8">
+      <header>
+        <h1 className="mb-4 text-center text-3xl md:text-4xl lg:text-5xl">
+          Discover Stunning Photos from Around the World
+        </h1>
+        <p className="text-center sm:text-xl">
+          Search any topic, explore a beautiful collection of images, and get
+          inspired.
+        </p>
+      </header>
+
+      <FeaturedTopics />
     </div>
   );
 }
