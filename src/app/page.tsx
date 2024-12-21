@@ -1,4 +1,5 @@
 import FeaturedTopics from "@/components/FeaturedTopics";
+import SearchBar from "@/components/SearchBar";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         </p>
       </header>
 
+      <SearchBar />
       <FeaturedTopics />
     </div>
   );
