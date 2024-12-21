@@ -1,4 +1,5 @@
 import FeaturedTopics from "@/components/FeaturedTopics";
+import PhotoGallery from "@/components/PhotoGallery";
 import SearchBar from "@/components/SearchBar";
 
 export default function Home() {
@@ -15,7 +16,10 @@ export default function Home() {
       </header>
 
       <SearchBar />
+
       <FeaturedTopics />
+
+      <PhotoGallery />
     </div>
   );
 }
