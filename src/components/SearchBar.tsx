@@ -1,9 +1,25 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+import { FormEvent } from "react";
+
 const SearchBar = () => {
+  const router = useRouter();
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+
+    const search = formData.get("search")?.toString().trim();
+
+    if (search) {
+      router.push(`/search/${search}`);
+    }
+  };
+
   return (
     <section>
-      <form className="mx-auto w-full max-w-sm">
+      <form className="mx-auto w-full max-w-sm" onSubmit={handleSubmit}>
         <label className="input input-bordered input-accent flex items-center pr-0">
           <span className="sr-only">Search for photos</span>
           <input

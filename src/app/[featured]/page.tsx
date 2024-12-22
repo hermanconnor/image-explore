@@ -17,7 +17,7 @@ export default async function FeaturedTopicPage({ params }: Props) {
   return (
     <div className="space-y-8">
       <h2 className="mb-5 text-2xl capitalize sm:text-3xl">
-        Results for: {decodeURIComponent(featured)}
+        {decodeURIComponent(featured)}
       </h2>
 
       <SearchBar />
