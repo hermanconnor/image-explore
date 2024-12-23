@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 import FeaturedTopics from "@/components/FeaturedTopics";
 import PhotoGallery from "@/components/PhotoGallery";
 import SearchBar from "@/components/SearchBar";
@@ -9,6 +11,15 @@ interface Props {
 
 export async function generateStaticParams() {
   return FEATURED_TOPICS.map((topic) => ({ topic }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { featured } = await params;
+  const decodedTopic = decodeURIComponent(featured);
+
+  return {
+    title: `Results for ${decodedTopic}`,
+  };
 }
 
 export default async function FeaturedTopicPage({ params }: Props) {
