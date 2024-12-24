@@ -6,15 +6,17 @@ interface Props {
 }
 
 const Photo = ({ photo }: Props) => {
-  const { secret, server, id, title } = photo;
+  const { secret, server, id, title, thumbHash, height, width } = photo;
 
   return (
     <Image
       src={`https://live.staticflickr.com/${server}/${id}_${secret}.jpg`}
-      width={500}
-      height={500}
+      width={height}
+      height={width}
       alt={title}
       className="h-auto w-full rounded-lg"
+      placeholder="blur"
+      blurDataURL={thumbHash}
     />
   );
 };
