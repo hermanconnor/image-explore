@@ -1,19 +1,18 @@
-import Link from "next/link";
-import ThemeDropdown from "./ThemeDropdown";
+import Link from 'next/link';
+import ThemeDropdown from './ThemeDropdown';
 
 const Navbar = () => {
   return (
-    <nav className="navbar mb-6 bg-base-100 px-4 shadow">
-      <div className="flex-1">
-        <Link href="/" className="text-xl text-accent">
+    <div className='navbar bg-base-100 shadow-sm mb-6'>
+      <div className='flex-1'>
+        <Link href='/' className='text-xl text-accent'>
           ImageExplore
         </Link>
       </div>
-
-      <div className="flex-none">
+      <div className='flex gap-2'>
         <ThemeDropdown />
       </div>
-    </nav>
+    </div>
   );
 };
 
